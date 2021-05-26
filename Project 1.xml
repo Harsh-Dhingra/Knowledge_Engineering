@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="new.xsl" type="text/xsl"?>
+<!DOCTYPE Restaurant [
+<!ELEMENT Restaurant (Food, beverage)>
+<!ELEMENT Food (starters, main_courses, Protein_Shakes)>
+<!ELEMENT starters (starter+)>
+<!ELEMENT starter (name, price, ingredients, calories, macros)>
+<!ELEMENT main_courses (salads, Gym_diets)>
+<!ELEMENT salads (salad+)>
+<!ELEMENT salad (name, price, ingredients, calories, macros)>
+<!ELEMENT Gym_diets (Gym_diet+)>
+<!ELEMENT Gym_diet (name, price, weight?, ingredients, calories, macros)>
+<!ELEMENT Protein_Shakes (shake+)>
+<!ELEMENT shake (name, price, ingredients, calories, macros)>
+<!ELEMENT beverage (diet_drinks)>
+<!ELEMENT diet_drinks (diet_drink+)>
+<!ELEMENT diet_drink (name, price, calories, volume*)>
+<!ELEMENT macros (protein, fat, carbs)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT ingredients (#PCDATA)>
+<!ELEMENT calories (#PCDATA)>
+<!ELEMENT protein (#PCDATA)>
+<!ELEMENT fat (#PCDATA)>
+<!ELEMENT carbs (#PCDATA)>
+<!ELEMENT weight (#PCDATA)>
+<!ELEMENT volume (#PCDATA)>
+<!ATTLIST starter id CDATA #REQUIRED>
+<!ATTLIST salad id CDATA #REQUIRED>
+<!ATTLIST Gym_diet id CDATA #REQUIRED>
+<!ATTLIST shake id CDATA #REQUIRED>
+<!ATTLIST diet_drink id CDATA #REQUIRED>
+<!ATTLIST price currency CDATA #REQUIRED>
+<!ATTLIST calories unit CDATA #FIXED "kcal">
+<!ATTLIST protein unit CDATA #FIXED "g">
+<!ATTLIST fat unit CDATA #FIXED "g">
+<!ATTLIST carbs unit CDATA #FIXED "g">
+<!ATTLIST weight unit CDATA #FIXED "gram">
+<!ATTLIST volume unit CDATA #FIXED "ml">
+]>
+<Restaurant>
+	<Food>
+		<starters>
+			<starter id ="1">
+				<name>Pav Bhaji</name>
+				<price currency ="EUR">18</price>
+				<ingredients>
+          Bhaji, Pav Bread, Herbs
+        </ingredients>
+				<calories unit="kcal">250</calories>
+				<macros>
+					<protein unit="g">5.9</protein>
+					<fat unit="g">12</fat>
+					<carbs unit="g">20</carbs>
+				</macros>
+			</starter>
+			<starter id ="2">
+				<name> Mexican Burrito</name>
+				<price currency ="EUR">10</price>
+				<ingredients>
+          Whole Wheat Tortilla, Rice, Chicken, Gheese, Sweet Chilli Sauce
+        </ingredients>
+				<calories>700</calories>
+				<macros>
+					<protein unit="g">18</protein>
+					<fat unit="g">14</fat>
+					<carbs unit="g">25</carbs>
+				</macros>
+			</starter>
+			<starter id ="3">
+				<name>Cheese Burger</name>
+				<price currency ="EUR">13.50</price>
+				<ingredients>
+          Burger Bun, Cheese, Patty, Herbs
+        </ingredients>
+				<calories unit="kcal">450</calories>
+				<macros>
+					<protein unit="g">10.9</protein>
+					<fat unit="g">5</fat>
+					<carbs unit="g">20</carbs>
+				</macros>
+			</starter>
+		</starters>
+		<main_courses>
+			<salads>
+				<salad id="4">
+					<name>Basic Salad</name>
+					<price currency="EUR">22</price>
+					<ingredients>
+            Tomatoes, Spinach , Basil Leaves, Cucumber, Carrot
+          </ingredients>
+					<calories unit="kcal">380</calories>
+					<macros>
+						<protein unit="g">2</protein>
+						<fat unit="g">9</fat>
+						<carbs unit="g">29</carbs>
+					</macros>
+				</salad>
+				<salad id = "5">
+					<name>Beetroot Chicken Salad</name>
+					<price currency="EUR">17</price>
+					<ingredients>
+            Beetroot, Tomato, Cucumber, Carrots, Chicken
+          </ingredients>
+					<calories unit="kcal">255</calories>
+					<macros>
+						<protein unit="g">25</protein>
+						<fat unit="g">8</fat>
+						<carbs unit="g">12</carbs>
+					</macros>
+				</salad>
+				<salad id="6">
+					<name>Mushroom Salad</name>
+					<price currency="EUR">18</price>
+					<ingredients>
+            Mushrooms, Tomato,, Cucumber, Celery, Parsley, olive Oil
+          </ingredients>
+					<calories unit="kcal">360</calories>
+					<macros>
+						<protein unit="g">16</protein>
+						<fat unit="g">6</fat>
+						<carbs unit="g">21</carbs>
+					</macros>
+				</salad>
+			</salads>
+			<Gym_diets>
+				<Gym_diet id='7'>
+					<name>Muscle Building Diet</name>
+					<price currency='EUR'>22</price>
+					<weight unit='gram'>400</weight>
+					<ingredients>
+            Tomato Sauce, Chicken Breast, Brocolli, Basil
+          </ingredients>
+					<calories unit='kcal'>450</calories>
+					<macros>
+						<protein unit='g'>38</protein>
+						<fat unit='g'>25</fat>
+						<carbs unit='g'>70</carbs>
+					</macros>
+				</Gym_diet>
+				<Gym_diet id='8'>
+					<name>Veg Mucle Building</name>
+					<price currency='EUR'>38</price>
+					<weight unit='gram'>490</weight>
+					<ingredients>
+            Tomato Sauce, Soy, Mushrooms, Chick Peas
+          </ingredients>
+					<calories unit='kcal'>600</calories>
+					<macros>
+						<protein unit='g'>43</protein>
+						<fat unit='g'>31</fat>
+						<carbs unit='g'>51</carbs>
+					</macros>
+				</Gym_diet>
+			</Gym_diets>
+		</main_courses>
+		<Protein_Shakes>
+			<shake id ="9">
+				<name>Optimum Nutrition 1 Scoop</name>
+				<price currency="EUR">6</price>
+				<ingredients>
+          Whey Protein, Milk, Chocolate, Cocoa Powder, Sugar
+        </ingredients>
+				<calories unit="kcal">250</calories>
+				<macros>
+					<protein unit="g">30</protein>
+					<fat unit="g">2</fat>
+					<carbs unit="g">12</carbs>
+				</macros>
+			</shake>
+		</Protein_Shakes>
+	</Food>
+	<beverage>
+		<diet_drinks>
+			<diet_drink id ="10">
+				<name> Diet Coke</name>
+				<price currency ="EUR">1.50</price>
+				<calories unit="kcal">0</calories>
+				<volume unit="ml">250</volume>
+			</diet_drink>
+			<diet_drink id ="11">
+				<name>Green Tea</name>
+				<price currency ="EUR">2.50</price>
+				<calories unit="kcal">20</calories>
+				<volume unit="ml">250</volume>
+			</diet_drink>
+		</diet_drinks>
+	</beverage>
+</Restaurant>
