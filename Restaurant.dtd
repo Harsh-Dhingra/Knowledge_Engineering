@@ -1,0 +1,25 @@
+<!ELEMENT Restaurant (Food,beverage)>
+<!ELEMENT Food (starters,main_courses,Protein_Shakes)>
+<!ELEMENT starters (starter+)>
+<!ELEMENT starter (name,price,ingredients,calories,macros)>
+<!ATTLIST starter id NMTOKEN #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price currency NMTOKEN #FIXED "EUR"><!ELEMENT ingredients (#PCDATA)><!ELEMENT calories (#PCDATA)><!ATTLIST calories unit (kcal) #IMPLIED><!ELEMENT macros (protein,fat,carbs)><!ELEMENT protein (#PCDATA)><!ATTLIST protein unit NMTOKEN #FIXED "g"><!ELEMENT fat (#PCDATA)><!ATTLIST fat unit NMTOKEN #FIXED "g"><!ELEMENT carbs (#PCDATA)><!ATTLIST carbs unit NMTOKEN #FIXED "g">
+<!ELEMENT main_courses (salad,Gym_diets)>
+<!ELEMENT salad (salad*,name?,price?,ingredients?,calories?,macros?)>
+<!ATTLIST salad id NMTOKEN #IMPLIED>
+<!ELEMENT Gym_diets (Gym_diet+)>
+<!ELEMENT Gym_diet (name,price,weight,ingredients,calories,macros)>
+<!ATTLIST Gym_diet id NMTOKEN #REQUIRED>
+<!ELEMENT weight (#PCDATA)>
+<!ATTLIST weight unit NMTOKEN #REQUIRED>
+<!ELEMENT Protein_Shakes (shake)>
+<!ELEMENT shake (name,price,ingredients,calories,macros)>
+<!ATTLIST shake id NMTOKEN #REQUIRED>
+<!ELEMENT beverage (diet_drinks)>
+<!ELEMENT diet_drinks (diet_drink+)>
+<!ELEMENT diet_drink (name,price,calories,volume)>
+<!ATTLIST diet_drink id NMTOKEN #REQUIRED>
+<!ELEMENT volume (#PCDATA)>
+<!ATTLIST volume unit NMTOKEN #REQUIRED>
